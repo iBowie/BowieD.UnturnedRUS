@@ -15,7 +15,7 @@ using BowieD.UnturnedRUS.Properties;
 
 namespace BowieD.UnturnedRUS;
 
-public class MainWindow : Window, IComponentConnector
+public partial class MainWindow : Window
 {
 	public const string version = "22";
 
@@ -28,32 +28,6 @@ public class MainWindow : Window, IComponentConnector
 	public static bool updateAvailable = false;
 
 	public static EAction installButtonAction = EAction.NONE;
-
-	internal Button installButton;
-
-	internal Button deleteButton;
-
-	internal MenuItem MENU_DONATE;
-
-	internal MenuItem MENU_COMMUNICATION;
-
-	internal MenuItem menu_INFO;
-
-	internal CheckBox MOD_TRANSLATION_CHECKBOX;
-
-	internal CheckBox CITY_TRANSLATION_CHECKBOX;
-
-	internal TextBlock unturnedChanges;
-
-	internal TextBlock MENU_DONATIONS_SHOW;
-
-	internal TextBlock MENU_MESSAGE;
-
-	internal ProgressBar progress;
-
-	internal Button modsInstallButton;
-
-	private bool _contentLoaded;
 
 	public bool IsConnected
 	{
@@ -366,67 +340,5 @@ public class MainWindow : Window, IComponentConnector
 		installButton.IsEnabled = true;
 		deleteButton.IsEnabled = true;
 		modsInstallButton.IsEnabled = true;
-	}
-
-	[DebuggerNonUserCode]
-	[GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
-	public void InitializeComponent()
-	{
-		if (!_contentLoaded)
-		{
-			_contentLoaded = true;
-			Uri resourceLocator = new Uri("/BowieD.UnturnedRUS;component/mainwindow.xaml", UriKind.Relative);
-			Application.LoadComponent(this, resourceLocator);
-		}
-	}
-
-	[DebuggerNonUserCode]
-	[GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	void IComponentConnector.Connect(int connectionId, object target)
-	{
-		switch (connectionId)
-		{
-		case 1:
-			installButton = (Button)target;
-			break;
-		case 2:
-			deleteButton = (Button)target;
-			break;
-		case 3:
-			MENU_DONATE = (MenuItem)target;
-			break;
-		case 4:
-			MENU_COMMUNICATION = (MenuItem)target;
-			break;
-		case 5:
-			menu_INFO = (MenuItem)target;
-			break;
-		case 6:
-			MOD_TRANSLATION_CHECKBOX = (CheckBox)target;
-			break;
-		case 7:
-			CITY_TRANSLATION_CHECKBOX = (CheckBox)target;
-			break;
-		case 8:
-			unturnedChanges = (TextBlock)target;
-			break;
-		case 9:
-			MENU_DONATIONS_SHOW = (TextBlock)target;
-			break;
-		case 10:
-			MENU_MESSAGE = (TextBlock)target;
-			break;
-		case 11:
-			progress = (ProgressBar)target;
-			break;
-		case 12:
-			modsInstallButton = (Button)target;
-			modsInstallButton.Click += Button_Click;
-			break;
-		default:
-			_contentLoaded = true;
-			break;
-		}
 	}
 }

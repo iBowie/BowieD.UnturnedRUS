@@ -10,14 +10,8 @@ using System.Windows.Markup;
 
 namespace BowieD.UnturnedRUS;
 
-public class ModsSelect : Window, IComponentConnector
+public partial class ModsSelect : Window
 {
-	internal TreeView treeView;
-
-	internal Button saveButton;
-
-	private bool _contentLoaded;
-
 	public string allowed
 	{
 		get
@@ -62,36 +56,5 @@ public class ModsSelect : Window, IComponentConnector
 	{
 		Window.GetWindow(this).DialogResult = true;
 		Window.GetWindow(this).Close();
-	}
-
-	[DebuggerNonUserCode]
-	[GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
-	public void InitializeComponent()
-	{
-		if (!_contentLoaded)
-		{
-			_contentLoaded = true;
-			Uri resourceLocator = new Uri("/BowieD.UnturnedRUS;component/modsselect.xaml", UriKind.Relative);
-			Application.LoadComponent(this, resourceLocator);
-		}
-	}
-
-	[DebuggerNonUserCode]
-	[GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	void IComponentConnector.Connect(int connectionId, object target)
-	{
-		switch (connectionId)
-		{
-		case 1:
-			treeView = (TreeView)target;
-			break;
-		case 2:
-			saveButton = (Button)target;
-			break;
-		default:
-			_contentLoaded = true;
-			break;
-		}
 	}
 }
