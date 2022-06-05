@@ -1,0 +1,42 @@
+﻿<Window x:Class="BowieD.UnturnedRUS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BowieD.UnturnedRUS"
+        mc:Ignorable="d"
+        Title="Установщик русификатора Unturned от BowieD" MinHeight="450" MinWidth="750" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="installButton" Content="Установить русификатор" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="249" Height="30"/>
+        <Button x:Name="deleteButton" Content="Удалить русификатор" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="{Binding Width, ElementName=installButton}" Height="{Binding Height, ElementName=installButton}"/>
+        <Menu Margin="10,10,10,0" Height="24" VerticalAlignment="Top">
+            <MenuItem Name="MENU_DONATE">
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/Resources/Money_20.png"/>
+                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <TextBlock Text="Задонатить" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </MenuItem.Header>
+            </MenuItem>
+            <!--<MenuItem Name="MENU_OPTIONS" Header="Параметры"/>-->
+            <MenuItem Name="MENU_COMMUNICATION" Header="Связь">
+            </MenuItem>
+            <MenuItem IsEnabled="False" Header="инфо" Name="menu_INFO" ToolTipService.ShowOnDisabled="True">
+
+            </MenuItem>
+        </Menu>
+        <CheckBox Name="MOD_TRANSLATION_CHECKBOX" Content="Перевод модов" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="CITY_TRANSLATION_CHECKBOX" Content="Перевод городов (не рекомендуется)" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top"/>
+        <!--<CheckBox Content="Автоматическая проверка на обновления" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top"/>-->
+        <Grid Background="White" Margin="264,39,10,10">
+            <ScrollViewer>
+                <TextBlock FontSize="18" Text="test" Name="unturnedChanges" Margin="10,10,10,10" TextWrapping="Wrap" TextAlignment="Justify"/>
+            </ScrollViewer>
+        </Grid>
+        <TextBlock Name="MENU_DONATIONS_SHOW" HorizontalAlignment="Left" Margin="10,169,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="249"/>
+        <TextBlock FontSize="18" x:Name="MENU_MESSAGE" HorizontalAlignment="Left" Margin="10,190,0,10" TextWrapping="Wrap" Text="test" Width="249"/>
+        <ProgressBar Name="progress" HorizontalAlignment="Left" Height="15" Margin="10,149,0,0" VerticalAlignment="Top" Width="249"/>
+        <Button Name="modsInstallButton" Click="Button_Click" Content="Только моды" HorizontalAlignment="Left" Margin="122,109,0,0" VerticalAlignment="Top" Width="137"/>
+        <!--<Button Content="Переведено (список)" Name="modsTranslatedListButton" HorizontalAlignment="Left" Margin="122,109,0,0" VerticalAlignment="Top" Width="137" Height="20"/>-->
+    </Grid>
+</Window>
